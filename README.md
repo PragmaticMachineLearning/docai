@@ -1,6 +1,6 @@
 # DocAI
 
-Extract structured data from  unstructured documents using Byaldi, Langchain, and OpenAI gpt-4o
+Extract structured data from  unstructured documents using Answer.AI's [Byaldi](https://github.com/AnswerDotAI/byaldi), OpenAI [gpt-4o](https://platform.openai.com/docs/guides/vision), and [Langchain's structured output](https://python.langchain.com/v0.1/docs/modules/model_io/chat/structured_output/).
 
 ### Installation
 ```bash
