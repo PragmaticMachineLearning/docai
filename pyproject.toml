@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "docai"
+version = "0.1.0"
+description = ""
+authors = ["Madison May <madison@indico.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10,<3.13"
+byaldi = "^0.0.2.post2"
+langchain-core = "^0.2.38"
+langchain-openai = "^0.1.23"
+rich = "^13.8.0"
+claudette = "^0.0.9"
+unstructured = {extras = ["all-docs"], version = "^0.15.9"}
+fire = "^0.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
