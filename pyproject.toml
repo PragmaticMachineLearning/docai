@@ -12,7 +12,6 @@ byaldi = "^0.0.2.post2"
 langchain-core = "^0.2.38"
 langchain-openai = "^0.1.23"
 rich = "^13.8.0"
-claudette = "^0.0.9"
 unstructured = {extras = ["all-docs"], version = "^0.15.9"}
 fire = "^0.6.0"
 
