@@ -4,7 +4,7 @@ from langchain_core.messages import HumanMessage
 from langchain_core.pydantic_v1 import BaseModel
 from langchain_openai import ChatOpenAI
 from docai.extract_text_from_doc import extract_text_from_pdfs
-
+from rich import print
 class Extractor:
     def __init__(
         self,
@@ -19,7 +19,8 @@ class Extractor:
 
         extract_texts = extract_text_from_pdfs(self.folder)
 
-        combined_text = "\n\n".join(["\n".join(text) for text in extract_texts])
+        combined_text = "\n\n".join([result["text"] for result in extract_texts])
+        print(combined_text)
         image_content = [
             {
                 "type": "image_url",
