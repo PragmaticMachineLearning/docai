@@ -1,21 +1,20 @@
-[tool.poetry]
+[project]
 name = "docai"
 version = "0.1.0"
-description = ""
-authors = ["Madison May <madison@indico.io>"]
+description = "Extracting structured data from unstructured documents"
 readme = "README.md"
-license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "byaldi>=0.0.2.post2",
+    "fire>=0.6.0",
+    "future>=1.0.0",
+    "graphrag>=0.3.3",
+    "hyppo>=0.4.0",
+    "langchain-core>=0.2.39",
+    "langchain-openai>=0.1.23",
+    "rich>=13.8.1",
+    "unstructured[all-docs]>=0.15.10",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10,<3.13"
-byaldi = "^0.0.2.post2"
-langchain-core = "^0.2.38"
-langchain-openai = "^0.1.23"
-rich = "^13.8.0"
-unstructured = {extras = ["all-docs"], version = "^0.15.9"}
-fire = "^0.6.0"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+override-dependencies = ["tenacity==9.0.0"]

@@ -4,9 +4,8 @@ Extract structured data from  unstructured documents using Answer.AI's [Byaldi](
 
 ### Installation
 ```bash
-pyenv virtualenv 3.10.6 docai
-pyenv activate docai
-poetry install
+python3 -m pip install -r requirements.txt
+python3 -m pip install .
 ```
 
 ### Environment vars
@@ -43,10 +42,10 @@ LossHistory(
 
 What is the basic application information?
 Application(
-  insured_name='Greentown Burgers LLC', 
-  insured_address='Not provided', 
+  insured_name='Greentown Burgers LLC',
+  insured_address='Not provided',
   insured_phone='Not provided',
-  insured_email='Not provided', 
+  insured_email='Not provided',
   effective_date='07/22/2024'
 )
 ```
