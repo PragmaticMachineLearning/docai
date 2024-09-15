@@ -29,8 +29,6 @@ def main(
         from docai.text import extract_texts_from_folder
         from graphrag.index.cli import index_cli
 
-        extract_texts_from_folder(folder)
-
         try:
             index_cli(
                 root_dir=folder,
@@ -41,7 +39,7 @@ def main(
                 nocache=False,
                 reporter="rich",
                 config_filepath=None,
-                emit="csv",
+                emit="parquet",
                 dryrun=False,
                 init=True,
                 skip_validations=False,
@@ -52,6 +50,8 @@ def main(
             else:
                 raise e
 
+        extract_texts_from_folder(folder)
+
         index_cli(
             root_dir=folder,
             verbose=True,
@@ -61,7 +61,7 @@ def main(
             nocache=False,
             reporter="rich",
             config_filepath=None,
-            emit="csv",
+            emit="parquet",
             dryrun=False,
             init=False,
             skip_validations=False,
