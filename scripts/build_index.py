@@ -1,3 +1,4 @@
+import glob
 from enum import Enum
 from typing import Literal
 
@@ -25,7 +26,31 @@ def main(
             overwrite=overwrite,
         )
     elif strategy == "graphrag":
+        from docai.text import extract_texts_from_folder
         from graphrag.index.cli import index_cli
+
+        extract_texts_from_folder(folder)
+
+        try:
+            index_cli(
+                root_dir=folder,
+                verbose=True,
+                resume=resume,
+                update_index_id=False,
+                memprofile=False,
+                nocache=False,
+                reporter="rich",
+                config_filepath=None,
+                emit="csv",
+                dryrun=False,
+                init=True,
+                skip_validations=False,
+            )
+        except ValueError as e:
+            if "Project already initialized" in str(e):
+                print("Index already initialized, resuming...")
+            else:
+                raise e
 
         index_cli(
             root_dir=folder,
@@ -38,7 +63,7 @@ def main(
             config_filepath=None,
             emit="csv",
             dryrun=False,
-            init=True,
+            init=False,
             skip_validations=False,
         )
     else:

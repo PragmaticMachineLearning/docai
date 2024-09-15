@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/docai/__init__.py
+src/docai/extractor.py
+src/docai/text.py
+src/docai.egg-info/PKG-INFO
+src/docai.egg-info/SOURCES.txt
+src/docai.egg-info/dependency_links.txt
+src/docai.egg-info/requires.txt
+src/docai.egg-info/top_level.txt

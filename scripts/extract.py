@@ -2,12 +2,11 @@ import base64
 from typing import Optional
 
 from byaldi import RAGMultiModalModel
+from docai.extractor import Extractor
 from langchain_core.messages import HumanMessage
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from rich import print
-
-from docai.extractor import Extractor
 
 
 class ExplainedField(BaseModel):

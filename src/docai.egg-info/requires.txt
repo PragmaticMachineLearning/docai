@@ -1,0 +1,11 @@
+byaldi>=0.0.2.post2
+fire>=0.6.0
+future>=1.0.0
+graphrag>=0.3.3
+hyppo>=0.4.0
+langchain-core>=0.2.39
+langchain-openai>=0.1.23
+paddlepaddle>=3.0.0b1
+python-dotenv>=1.0.1
+rich>=13.8.1
+unstructured[all-docs,paddleocr]>=0.15.10
