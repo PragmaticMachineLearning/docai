@@ -1,12 +1,7 @@
-import base64
-from typing import Optional
-
-from byaldi import RAGMultiModalModel
-from docai.extractor import Extractor
-from langchain_core.messages import HumanMessage
 from pydantic import BaseModel, Field
-from langchain_openai import ChatOpenAI
 from rich import print
+
+from docai.extractor import Extractor
 
 
 class ExplainedField(BaseModel):
@@ -18,10 +13,10 @@ class ExplainedField(BaseModel):
 
 class Application(BaseModel):
     insured_name: ExplainedField = Field(description="The insured name")
-    insured_address: str  = Field(description="The insured address")
+    insured_address: str = Field(description="The insured address")
     insured_phone: str = Field(description="The insured phone number")
-    insured_email: str  = Field(description="The insured email address")
-    effective_date: str|None = Field(
+    insured_email: str = Field(description="The insured email address")
+    effective_date: str = Field(
         description="Proposed start of the policy period. A.K.A. 'Effective Date"
     )
 
@@ -46,5 +41,11 @@ if __name__ == "__main__":
             Application,
         ),
     ]:
-        response = extractor.extract(model_name="gpt-4o", query=query,  temperature = 0.1,data_model=data_model, k=3)
+        response = extractor.extract(
+            model_name="gpt-4o",
+            query=query,
+            temperature=0.1,
+            data_model=data_model,
+            k=3,
+        )
         print(query, response)
